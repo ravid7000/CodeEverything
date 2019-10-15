@@ -1,0 +1,45 @@
+.cardioid {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: -300;
+  fill: #efc88b;
+  stroke: #cf5c36;
+  animation: dash 5s linear infinite, AnimteRainbow 5s linear infinite;
+}
+
+.heart-group {
+  transform: scale(8, 8);
+}
+
+.flip {
+  transform: scaleY(-1);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 2000;
+  }
+}
+/*
+@keyframes AnimteRainbow {
+    0% {
+        stroke: #FF0000;
+    }
+    14% {
+        stroke: #FF7F00;
+    }
+    28% {
+        stroke: #FFFF00;
+    }
+    42% {
+        stroke: #00FF00;
+    }
+    56% {
+        stroke: #0000FF;
+    }
+    70% {
+        stroke: #4B0082;
+    }
+    84% {
+        stroke: #8B00FF;
+    }
+} */
