@@ -76,7 +76,7 @@ const Cardioid = () => {
     <Grid width={width} height={height} spacing={60} />
       <Translate x={width/2} y={height/2}>
         <g class="heart-group">
-          <path d={makeHeart()} class="cardioid flip" stroke="#000" strokeWidth="0" />
+          <path d={makeCardioid()} class="cardioid flip" stroke="#000" strokeWidth="0" />
         </g>
       </Translate>
     </Sketch>
