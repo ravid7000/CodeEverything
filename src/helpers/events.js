@@ -6,7 +6,7 @@ window.mousePressed = false;
 window.keyPressed = '';
 
 
-function getMousePosFromEvent(event, i = 0) {
+export function getMousePosFromEvent(event, i = 0) {
     const point = { clientX: 0, clientY: 0 };
     if (event.targetTouches) {
         const touched = event.targetTouches[i] || event.touches[i] || event.changedTouches[i];

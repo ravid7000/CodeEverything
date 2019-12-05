@@ -12,8 +12,16 @@ const ViewBoxZoom = () => {
             zoomLevel = Math.max(zoomLevel + window.mouseWheelDeltaY / 100, 1);
             const zw = width / zoomLevel;
             const hw = height / zoomLevel;
-            const vb = [0, 0, zw, hw].join(' ');
-            setViewBox(vb);
+            const wm = zw / 2;
+            const hm = hw / 2;
+            // const left = Math.max(0, window.mouseX - wm);
+            // const top = Math.max(0, window.mouseY - hm);
+            // const right = Math.min(width, window.mouseX + wm);
+            // const bottom = Math.min(height, window.mouseY + hm);
+            // const vb = [left, top, right, bottom].join(' ');
+            // console.log(vb);
+            console.log(window.mouseX, window.mouseY)
+            // setViewBox(vb);
             return false;
         }
     }, [])
