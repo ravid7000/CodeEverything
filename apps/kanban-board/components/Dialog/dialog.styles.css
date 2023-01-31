@@ -1,0 +1,42 @@
+.dialog-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: hsla(var(--brand-hue), 60%, 20%, 0.1);
+  z-index: var(--z-index-dialog-overlay);
+}
+
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 400px;
+  max-width: 100%;
+  box-shadow: 0 4px 16px hsla(var(--brand-hue), 60%, 20%, 0.1), 0 8px 32px hsla(var(--brand-hue), 60%, 20%, 0.05);
+}
+
+.dialog-header, .dialog-footer, .dialog-content {
+  padding: var(--spacing) 2rem;
+  background-color: var(--surface2-color); /* white */
+}
+
+.dialog-header, .dialog-footer {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.dialog-header {
+  justify-content: space-between;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
+.dialog-footer {
+  justify-content: flex-end;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}

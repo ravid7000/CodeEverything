@@ -1,0 +1,12 @@
+.btn-primary {
+  color: var(--surface2-color);
+  background-color: var(--brand-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-color-light);
+}
+
+.btn-primary:focus {
+  background-color: var(--brand-color-dim);
+}

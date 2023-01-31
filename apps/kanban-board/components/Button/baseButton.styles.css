@@ -1,0 +1,30 @@
+.btn {
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 1rem 2.8rem;
+  border-radius: 0.4rem;
+  transition: all 0.3s;
+  color: var(--text-color);
+}
+
+.btn + .btn {
+  margin-inline-start: var(--spacing);
+}
+
+.btn.full-width {
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: hsl(var(--surface-hue), 17%, 96%);
+}
+
+.btn:focus {
+  background-color: hsl(var(--surface-hue), 17%, 90%);
+}

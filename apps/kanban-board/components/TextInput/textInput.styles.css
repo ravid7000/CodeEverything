@@ -1,0 +1,33 @@
+.text-input {
+  margin-block-end: calc(var(--spacing) * 2);
+}
+
+.text-input .text-input-label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-block-end: var(--spacing);
+}
+
+.text-input-label .required {
+  color: red;
+}
+
+.text-input, .text-input input {
+  display: block;
+  width: 100%;
+}
+
+.text-input input {
+  padding: 1rem 1.6rem;
+  font-size: 1.6rem;
+  border: 2px solid var(--brand-color-light);
+  background-color: var(--surface1-color);
+  border-radius: 0.4rem;
+}
+
+.text-input input:focus {
+  outline: none;
+  border-color: var(--brand-color);
+}

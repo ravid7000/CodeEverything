@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Colors */
+  --brand-hue: 197;
+  --text-hue: 213;
+  --surface-hue: 210;
+
+  --brand-color: hsl(var(--brand-hue), 93%, 39%);
+  --brand-color-light: hsl(var(--brand-hue), 93%, 45%);
+  --brand-color-dim: hsl(var(--brand-hue), 93%, 35%);
+
+  --text-color: hsl(var(--text-hue), 36%, 32%);
+  /* used for background color for workspace cards */
+  --surface1-color: hsl(var(--surface-hue), 17%, 98%);
+  /* white color for cards */
+  --surface2-color: hsl(var(--surface-hue), 100%, 100%);
+  --surface3-color: hsl(var(--surface-hue), 17%, 95%);
+
+  --shadow1-color: hsla(var(--brand-hue), 93%, 39%, 0.1);
+  --shadow2-color: hsla(var(--brand-hue), 93%, 39%, 0.2);
+
+  /* input placeholder */
+  --placeholder-color: hsl(var(--surface-hue), 16%, 70%);
+
+  /* spacing: margin and padding */
+  --spacing: 0.8rem;
+  --spacing-grid: 2rem;
+  --spacing-columns: 1.6rem;
+
+  /* header */
+  --header-height: 6rem;
+
+  /* z-indexes */
+  --z-index-dialog-overlay: 99;
+  --z-index-dialog: 100;
+
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}

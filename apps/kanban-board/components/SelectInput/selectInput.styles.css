@@ -1,0 +1,33 @@
+.select-input {
+  margin-block-end: calc(var(--spacing) * 2);
+}
+
+.select-input .select-input-label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-block-end: var(--spacing);
+}
+
+.select-input-label .required {
+  color: red;
+}
+
+.select-input, .select-input select {
+  display: block;
+  width: 100%;
+}
+
+.select-input select {
+  padding: 1rem 1.6rem;
+  font-size: 1.6rem;
+  border: 2px solid var(--brand-color-light);
+  background-color: var(--surface1-color);
+  border-radius: 0.4rem;
+  outline: none;
+}
+
+.select-input input:focus {
+  border-color: var(--brand-color);
+}

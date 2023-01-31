@@ -1,0 +1,10 @@
+.board {
+  padding: 3rem 2rem;
+}
+
+.board-content {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+  overflow-x: auto;
+  padding-block-end: 1rem;
+}
