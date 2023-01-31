@@ -1,0 +1,14 @@
+.card {
+  padding: calc(var(--spacing) * 2);
+  background-color: var(--surface2-color);
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 6px var(--shadow2-color);
+  margin-block-end: var(--spacing);
+}
+
+.card-header {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-block-end: calc(var(--spacing) * 2);
+  color: hsl(var(--surface-hue), 16%, 70%);
+}

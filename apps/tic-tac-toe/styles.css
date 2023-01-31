@@ -1,0 +1,44 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.game {
+  width: min(400px, 100%);
+  margin-inline: auto;
+}
+
+.game-board {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid #e1e2e3;
+}
+
+.game-board .game-board--row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.game-board .game-board--cell {
+  border: 1px solid #e1e2e3;
+  width: 33.3333%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+.btn {
+  padding: 0.3rem 1rem;
+  background-color: #e1e2e3;
+  border: 0;
+  margin: 0;
+}

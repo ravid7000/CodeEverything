@@ -1,0 +1,30 @@
+.workspace-card {
+  width: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.workspace-card .workspace-card-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-block-end: calc(var(--spacing) * 2);
+}
+
+.workspace-card .workspace-card-content {
+  position: relative;
+  height: calc(100vh - var(--header-height) - 140px); /* Not a good way */
+  border-radius: 0.4rem;
+  background-color: var(--surface1-color);
+  padding: var(--spacing);
+  padding-block-end: 6.5rem;
+}
+
+.workspace-card-control {
+  position: absolute;
+  bottom: var(--spacing);
+  left: var(--spacing);
+  right: var(--spacing);
+  background-color: var(--surface3-color);
+  display: flex;
+  justify-content: center;
+}

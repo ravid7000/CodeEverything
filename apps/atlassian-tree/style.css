@@ -1,0 +1,33 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.app {
+  width: min(600px, 100%);
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  padding: 0.3rem;
+  margin-right: 0.3rem;
+  background: none;
+  border: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.btn span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #c2c2c2;
+  border-right: 2px solid #c2c2c2;
+  transform: rotate(45deg);
+  transition: all 0.2s;
+}
+
+.btn.open span {
+  transform: rotate(135deg);
+}
