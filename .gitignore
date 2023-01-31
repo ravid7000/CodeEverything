@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+tutorials
+exports
+.idea
+interview_questions
+
