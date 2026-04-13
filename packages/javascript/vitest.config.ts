@@ -1,6 +1,10 @@
 import { defineConfig } from "vitest/config";
-import { createNodeVitestPreset } from "@code-everything/vite-config/vitest.shared";
 
-export default defineConfig(
-  createNodeVitestPreset({ passWithNoTests: true })
-);
+export default defineConfig({
+  test: {
+    globals: true,
+    environment: "jsdom",
+    include: ["src/**/*.{test,spec}.ts", "src/**/__tests__/**/*.ts"],
+    passWithNoTests: true,
+  },
+});
