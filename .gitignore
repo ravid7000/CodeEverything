@@ -1,29 +1,81 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-node_modules
+# Dependencies
+node_modules/
+
+# Package managers
 /.pnp
+.pnp.*
 .pnp.js
+package-lock.json
 
-# testing
-coverage
+# Environment & secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
 
-# production
-/build
-dist
+# Build & output
+build/
+dist/
+out/
+.next/
+.nuxt/
+*.local
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# TypeScript
+*.tsbuildinfo
 
+# Test & coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Caches (tooling / bundlers)
+.cache/
+.turbo/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.vite/
+**/.vite/
+
+# Vite / Vitest (under packages)
+**/node_modules/.vite/
+
+# Logs & debug
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-tutorials
-exports
-.idea
+pnpm-debug.log*
+lerna-debug.log*
 
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
+# Editors & IDEs
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Optional: uncomment to ignore VS Code user settings (keep shared tasks if committed)
+# .vscode/*
+# !.vscode/extensions.json
+# !.vscode/settings.json
+
+# Project-specific
+tutorials/
+exports/
+interview_questions/
