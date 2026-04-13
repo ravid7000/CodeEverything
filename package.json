@@ -6,6 +6,6 @@
     "node": ">=20"
   },
   "scripts": {
-    "create-package": "node scripts/create-package.mjs"
+    "cp": "node scripts/create-package.mjs"
   }
 }
