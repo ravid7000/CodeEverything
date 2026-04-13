@@ -1,0 +1,14 @@
+{
+  "name": "@code-everything/design-patterns",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/singleton.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.3"
+  }
+}

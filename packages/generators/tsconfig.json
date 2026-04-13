@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2015"],
+    "noEmit": true
+  },
+  "include": ["src"]
+}

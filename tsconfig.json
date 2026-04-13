@@ -1,8 +1,4 @@
 {
-  "include": ["apps/*"],
-  "compilerOptions": {
-    "target": "es5",
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true
-  }
+  "extends": "./tsconfig.base.json",
+  "include": ["packages/*/src"]
 }
