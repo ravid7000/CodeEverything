@@ -17,6 +17,9 @@ importers:
         specifier: workspace:*
         version: link:../stream
     devDependencies:
+      '@code-everything/vite-config':
+        specifier: workspace:*
+        version: link:../vite-config
       '@types/node':
         specifier: ^18.19.0
         version: 18.19.130
@@ -26,6 +29,9 @@ importers:
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
+      vitest:
+        specifier: ^3.0.5
+        version: 3.2.4(@types/node@18.19.130)(tsx@4.21.0)
 
   packages/analytics:
     dependencies:
@@ -115,6 +121,9 @@ importers:
 
   packages/javascript:
     devDependencies:
+      '@code-everything/vite-config':
+        specifier: workspace:*
+        version: link:../vite-config
       '@types/node':
         specifier: ^18.19.0
         version: 18.19.130
@@ -124,6 +133,9 @@ importers:
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
+      vitest:
+        specifier: ^3.0.5
+        version: 3.2.4(@types/node@18.19.130)(tsx@4.21.0)
 
   packages/kanban-board:
     dependencies:
@@ -204,6 +216,9 @@ importers:
       vite:
         specifier: ^6.2.0
         version: 6.4.2(@types/node@18.19.130)(tsx@4.21.0)
+      vitest:
+        specifier: ^3.0.5
+        version: 3.2.4(@types/node@18.19.130)(tsx@4.21.0)
 
 packages:
 

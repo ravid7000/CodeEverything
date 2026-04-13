@@ -6,6 +6,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "cp": "node scripts/create-package.mjs"
+    "cp": "node scripts/create-package.mjs",
+    "test": "pnpm -r --if-present run test"
   }
 }

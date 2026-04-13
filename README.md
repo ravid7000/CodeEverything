@@ -13,6 +13,27 @@ Each app is a package under `packages/` with its own dev server and `index.html`
 
 Shared Vite presets live in `packages/vite-config` (`createReactAppConfig` / `createVanillaAppConfig`).
 
+## Tests (Vitest)
+
+Shared test presets live in `packages/vite-config/vitest.shared.ts`:
+
+| Preset | Use case |
+| --- | --- |
+| `createReactVitestPreset` | Vite + React: merge into `vite.config.ts` with `defineConfig` from `vitest/config`. Default environment is **`jsdom`** (add devDependency `jsdom`). Use `{ environment: "node" }` for logic-only tests. |
+| `createNodeVitestPreset` | Node / `tsx` packages: default export in a root `vitest.config.ts` with `defineConfig` from `vitest/config`. |
+
+Run all package tests that define a `test` script:
+
+```sh
+pnpm test
+```
+
+Run one package:
+
+```sh
+pnpm --filter @code-everything/tic-tac-toe test
+```
+
 ## Node / CLI-style packages
 
 TypeScript scripts under `packages/algos`, `packages/design-patterns`, `packages/hello-world`, etc. Run with `tsx`, for example:
