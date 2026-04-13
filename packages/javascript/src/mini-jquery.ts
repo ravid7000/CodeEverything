@@ -91,6 +91,55 @@ class Wrapper {
 
     return this
   }
+
+  css(prop: string): string
+  css(prop: string, value: string): Wrapper
+  css(props: Record<string, string>): Wrapper
+  css(
+    propOrProps: string | Record<string, string>,
+    value?: string
+  ): string | Wrapper {
+    if (
+      typeof propOrProps === "object" &&
+      propOrProps !== null &&
+      !Array.isArray(propOrProps)
+    ) {
+      for (const key of Object.keys(propOrProps)) {
+        const v = propOrProps[key]
+        if (v === undefined) {
+          continue
+        }
+        for (const el of this.elements) {
+          Wrapper.setInlineStyle(el, key, v)
+        }
+      }
+      return this
+    }
+
+    const prop = propOrProps as string
+    if (value === undefined) {
+      return Wrapper.getInlineStyle(this.elements[0], prop)
+    }
+
+    for (const el of this.elements) {
+      Wrapper.setInlineStyle(el, prop, value)
+    }
+    return this
+  }
+
+  /** Inline styles only (not computed), camelCase keys like `paddingLeft`. */
+  private static getInlineStyle(el: HTMLElement | undefined, prop: string): string {
+    if (!el) {
+      return ""
+    }
+    const style = el.style as unknown as Record<string, string>
+    return style[prop] ?? ""
+  }
+
+  private static setInlineStyle(el: HTMLElement, prop: string, val: string): void {
+    const style = el.style as unknown as Record<string, string>
+    style[prop] = val
+  }
 }
 export function $(elementOrString: HTMLElement | string) {
   return new Wrapper(elementOrString)

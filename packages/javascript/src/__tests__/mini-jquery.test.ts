@@ -7,6 +7,9 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 // wrapper.removeClass(className) -> wrapper
 // wrapper.on(event, handler) -> wrapper
 // wrapper.off(event, handler?) -> wrapper
+// wrapper.css(name) -> string (first element’s inline value for that property)
+// wrapper.css(name, value) -> wrapper
+// wrapper.css({ name: value, ... }) -> wrapper
 import { $ } from '../mini-jquery';
 
 describe('mini-jQuery-like API (TDD tests only)', () => {
@@ -152,6 +155,42 @@ describe('mini-jQuery-like API (TDD tests only)', () => {
     el.dispatchEvent(new Event('evt'));
     expect(h1).toHaveBeenCalledTimes(1);
     expect(h2).toHaveBeenCalledTimes(2);
+  });
+
+  it('should get and set inline styles via css() and support chaining', () => {
+    const el = document.createElement('div');
+    document.body.appendChild(el);
+    const wrapper = $(el);
+
+    const chained = wrapper.css('paddingLeft', '12px').addClass('styled');
+    expect(chained).toBe(wrapper);
+    expect(el.style.paddingLeft).toBe('12px');
+    expect(el.classList.contains('styled')).toBe(true);
+
+    expect(wrapper.css('paddingLeft')).toBe('12px');
+  });
+
+  it('should apply css() object map to all matched elements', () => {
+    const container = document.createElement('div');
+    container.innerHTML = '<span class="cell"></span><span class="cell"></span>';
+    document.body.appendChild(container);
+
+    const cells = $('.cell');
+    cells.css({ marginTop: '4px', opacity: '0.5' });
+
+    const nodes = Array.from(document.querySelectorAll('.cell')) as HTMLElement[];
+    expect(nodes.every((n) => n.style.marginTop === '4px' && n.style.opacity === '0.5')).toBe(
+      true
+    );
+  });
+
+  it('should not throw when css() is used on an empty selection', () => {
+    const wrapper = $('.missing');
+    expect(() => {
+      wrapper.css('color', 'red');
+      wrapper.css({ display: 'block' });
+    }).not.toThrow();
+    expect(() => wrapper.css('color')).not.toThrow();
   });
 
   // Brief notes: these tests act as the specification. Implement ../mini-jquery to make them pass.
