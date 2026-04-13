@@ -19,6 +19,22 @@ TypeScript scripts under `packages/algos`, `packages/design-patterns`, `packages
 
 `pnpm --filter @code-everything/algos exec tsx src/fibonacci.ts`
 
+## New package (scaffold)
+
+From the repo root:
+
+```sh
+pnpm create-package
+```
+
+You will be prompted for a **kebab-case** folder name and **React (Vite)** vs **Node (tsx)**. For React, the script suggests the next free dev server port after existing Vite apps.
+
+Non-interactive (three lines: name, `1` or `2`, optional port for React — empty line uses the suggested port):
+
+```sh
+printf 'my-app\n1\n\n' | pnpm create-package
+```
+
 ## Installation
 
 ```sh

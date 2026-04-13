@@ -4,5 +4,8 @@
   "packageManager": "pnpm@10.13.1",
   "engines": {
     "node": ">=20"
+  },
+  "scripts": {
+    "create-package": "node scripts/create-package.mjs"
   }
 }
