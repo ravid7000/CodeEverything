@@ -1,37 +1,62 @@
 # Copilot instructions — CodeEverything
 
 Purpose
-- Help Copilot/Copilot CLI sessions understand this repository's structure, commands, and conventions so suggestions and automated edits are accurate.
+- Help Copilot / Copilot CLI sessions understand this repository's structure, commands, and conventions so automated edits and suggestions are accurate.
 
 Quick commands
-- Install dependencies: npm i
-- Start dev server (CRA override): npm start
-- Run all tests: npm test
-- Run a single test file or pattern:
-  - By file: npm test -- path/to/file.test.js
-  - By name/pattern: npm test -- -t "pattern"
-- Build: no build script is defined in package.json. Use the existing npm scripts or add a `build` script if needed.
-- Lint: no lint script configured in package.json.
+- Install dependencies: pnpm install
+- Run all package tests: pnpm test
+  - Root `pnpm test` runs tests for packages that define a `test` script (workspaces).
+- Run tests for a single package: pnpm --filter <package> test
+  - Example: pnpm --filter @code-everything/tic-tac-toe test
+- Run a single test file or pattern inside a package:
+  - By file: pnpm --filter <package> test -- path/to/file.test.ts
+  - By name/pattern: pnpm --filter <package> test -- -t "pattern"
+- Create a new package (scaffold): pnpm create-package
+- Install and run a package script: pnpm --filter <package> run <script>
+
+Build / lint
+- No global `build` or `lint` scripts are defined. Add package-level scripts when needed so CI and Copilot can discover them.
 
 High-level architecture
-- Monorepo-style repo containing multiple small projects and learning code.
-- apps/ contains the React application sources. config-overrides.js re-points CRA's app entry and src to apps/index.tsx and apps/ respectively.
-- algos/, data-structures/, design-patterns/, generators/ contain standalone example code / educational scripts (not part of CRA build by default).
-- package.json uses react-app-rewired to run scripts so tooling must invoke the npm scripts (start/test) rather than react-scripts directly.
-- TypeScript: tsconfig.json is scoped to include apps/* — TypeScript typechecking for other top-level .ts files (e.g., hello-world.ts) is not configured automatically.
+- Monorepo (pnpm workspace) with packages under `packages/*`.
+- Apps (Vite / React) are packaged under `packages/` (each app is a package with its own dev server and index.html).
+- Shared tooling/config: `packages/vite-config` contains Vite and Vitest presets used across apps/packages.
+- Learning/utility code lives in top-level folders under `packages/` (e.g., algos, data-structures, design-patterns).
+- TypeScript: `tsconfig.json` includes `packages/*/src`. Some top-level TS files may be outside strict TS project scope.
 
-Key conventions
-- apps/ is the canonical React source root. New app code should go under apps/ so CRA path overrides pick it up.
-- Entry point is apps/index.tsx (see config-overrides.js). If adding alternate entries, update config-overrides.js paths.appIndexJs accordingly.
-- Tests run via react-app-rewired test. To execute a single test, use `npm test -- <path>` or `npm test -- -t "<pattern>"`.
-- No centralized lint/build scripts currently — add scripts to package.json when introducing new CI or tooling to make them discoverable.
-- Prefer using the existing npm scripts (react-app-rewired) for consistency with path overrides.
+Tests and test runner conventions
+- Vitest is used for many packages (jsdom for browser-like tests; node for pure-logic tests). Shared presets live in `packages/vite-config/vitest.shared.ts`.
+- Preferred test commands:
+  - Full repo: pnpm test
+  - Per-package: pnpm --filter <package> test
+  - Single file: pnpm --filter <package> test -- path/to/file.test.ts
+  - Single test by name: pnpm --filter <package> test -- -t "pattern"
+- When adding tests, prefer the shared Vitest presets so environment and globals stay consistent.
 
-AI assistant / agent config files
-- No special AI assistant configuration files (CLAUDE.md, .cursorrules, AGENTS.md, .windsurfrules, CONVENTIONS.md, AIDER_CONVENTIONS.md, .clinerules) were detected. Add them to the repo if a different assistant workflow is required.
+Key conventions and patterns
+- Package layout: each package under `packages/` should expose typical src/ and test locations: `packages/<name>/src` and `packages/<name>/src/__tests__` or `packages/<name>/test` (follow the local package's convention).
+- Apps are canonical under `packages/*` (not `apps/`); check `pnpm-workspace.yaml` for workspace globs.
+- React apps use CRA overrides via `config-overrides.js` and `react-app-rewired`. Use the package scripts (e.g., `dev`, `start`) rather than calling react-scripts directly.
+- New React apps scaffolded with `pnpm create-package` will adjust dev server ports automatically.
+- Tests should avoid relying on global environment changes; use the shared Vitest preset to set `environment: 'jsdom'` or `'node'` explicitly when needed.
 
-When updating these instructions
-- Include any new npm scripts (build, lint, typecheck), custom environment variables, or changes to config-overrides.js so Copilot sessions can surface accurate suggestions.
+Files useful for Copilot sessions
+- `package.json` (root): workspace scripts and `pnpm` settings
+- `pnpm-workspace.yaml`: workspace package globs
+- `packages/vite-config/`: shared Vite and Vitest presets
+- `tsconfig.base.json` / `tsconfig.json`: TS project scope
+- `scripts/`: repository-level helper scripts (e.g., create-package)
+
+AI assistant notes
+- No other assistant config files were detected (CLAUDE.md, AGENTS.md, etc.). If you introduce an assistant workflow, add a short README (CLAUDE.md or AGENTS.md) and reference it here.
+- When making edits across packages, prefer `pnpm --filter` to limit commands to a package to avoid long-running workspace tasks.
+
+MCP Servers
+- If you want Playwright / Puppeteer / browser automation servers configured for UI tests, add a short section here and include scripts in package.json (e.g., `test:e2e`) so Copilot can discover them. (No MCP servers configured by default.)
+
+What to update here
+- When adding global scripts (build, lint, test presets), update this file to include exact commands and any environment variables required.
 
 ---
-Generated by Copilot CLI
+Generated by Copilot CLI - suggested improvements
