@@ -10,6 +10,7 @@ Each app is a package under `packages/` with its own dev server and `index.html`
 | Tic tac toe | `pnpm --filter @code-everything/tic-tac-toe dev` | 5174 |
 | Atlassian tree | `pnpm --filter @code-everything/atlassian-tree dev` | 5175 |
 | Analytics | `pnpm --filter @code-everything/analytics dev` | 5176 |
+| use-query minimal | `pnpm --filter @code-everything/use-query dev` | 5177 |
 
 Shared Vite presets live in `packages/vite-config` (`createReactAppConfig` / `createVanillaAppConfig`).
 
@@ -45,7 +46,7 @@ TypeScript scripts under `packages/algos`, `packages/design-patterns`, `packages
 From the repo root:
 
 ```sh
-pnpm create-package
+pnpm cp
 ```
 
 You will be prompted for a **kebab-case** folder name and **React (Vite)** vs **Node (tsx)**. For React, the script suggests the next free dev server port after existing Vite apps.
@@ -53,11 +54,12 @@ You will be prompted for a **kebab-case** folder name and **React (Vite)** vs **
 Non-interactive (three lines: name, `1` or `2`, optional port for React — empty line uses the suggested port):
 
 ```sh
-printf 'my-app\n1\n\n' | pnpm create-package
+printf 'my-app\n1\n\n' | pnpm cp
 ```
 
-## Installation
+## Root scripts
 
-```sh
-pnpm install
-```
+- **Install deps**: `pnpm install`
+- **Run all tests**: `pnpm test`
+- **Create new package**: `pnpm cp` (alias for `pnpm create-package`)
+
