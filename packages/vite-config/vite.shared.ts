@@ -1,5 +1,5 @@
 import react from "@vitejs/plugin-react";
-import type { UserConfig } from "vite";
+import { type UserConfig, mergeConfig } from "vite";
 
 export type SharedViteOptions = {
   /** Dev server port (each app should pick a unique port). */
@@ -10,17 +10,18 @@ export type SharedViteOptions = {
  * Preset for React + Vite apps. Import and merge with `mergeConfig` from `vite` for app-specific overrides.
  */
 export function createReactAppConfig(
-  options: SharedViteOptions = {}
+  options: SharedViteOptions = {},
+  overrides: UserConfig = {}
 ): UserConfig {
   const port = options.port ?? 5173;
-  return {
+  return mergeConfig(overrides, {
     plugins: [react()],
     server: { port },
     build: {
       outDir: "dist",
       emptyOutDir: true,
     },
-  };
+  });
 }
 
 /**

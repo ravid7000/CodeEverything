@@ -1,0 +1,27 @@
+{
+  "name": "@code-everything/custom-ssr",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:csr": "vite",
+    "dev": "tsx src/server.ts",
+    "build": "vite build && vite build --ssr src/entry-server.tsx && tsx src/ssg.ts",
+    "preview": "NODE_ENV=production tsx server.ts"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@code-everything/vite-config": "workspace:*",
+    "@types/express": "^5.0.6",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0"
+  }
+}
