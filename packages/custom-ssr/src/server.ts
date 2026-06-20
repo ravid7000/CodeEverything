@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createServer as createViteServer } from 'vite';
+import { buildEventPageProps } from './event/fetchEvent';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isProd = process.env.NODE_ENV === 'production';
@@ -20,6 +21,17 @@ async function main() {
     appType: 'custom',
   });
   app.use(vite.middlewares);
+
+  app.get('/api/event/:id', async (req, res) => {
+    try {
+      const id = String(req.params.id || 'evt-1');
+      const payload = await buildEventPageProps(id);
+      res.json(payload);
+    } catch (e) {
+      console.error(e);
+      res.status(500).json({ error: 'Failed to load event' });
+    }
+  });
 
   // CSR-only route: send shell with spinner, no data fetch on server.
   app.get('/dashboard', async (req, res) => {
@@ -42,11 +54,23 @@ async function main() {
 
   // Streaming SSR for everything else (/{*splat} matches / too; bare * is invalid in Express 5).
   app.get('/{*splat}', async (req, res) => {
-    const initialData = req.path === '/' ? await fetchHomeData() : {};
+    const initialData: Record<string, unknown> = {};
+
+    if (req.path === '/') {
+      Object.assign(initialData, await fetchHomeData());
+    }
+
+    const eventMatch = req.path.match(/^\/event\/([^/]+)$/);
+    if (eventMatch) {
+      const id = decodeURIComponent(eventMatch[1]);
+      initialData.eventPage = await buildEventPageProps(id);
+    }
+
     return streamSSR(req, res, vite, initialData);
   });
 
-  app.listen(3000, () => console.log('http://localhost:3000'));
+  const port = Number(process.env.PORT) || 3000;
+  app.listen(port, () => console.log(`http://localhost:${port}`));
 }
 
 async function streamSSR(req: express.Request, res: express.Response, vite: any, initialData: any) {

@@ -1,5 +1,7 @@
 # 13 – Hands-on: Mini React Query (in `packages/use-query`)
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — LOC (Lines of Code), GC (Garbage Collection), SWR (Stale-While-Revalidate).
+
 Target time: **90 min**. Goal: prove you understand caching, dedupe, stale-while-revalidate, and optimistic updates by implementing them in ~200 LOC.
 
 ---

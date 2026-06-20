@@ -1,5 +1,7 @@
 # 06 – Module Federation vs NPM Package Distribution
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — MF (Module Federation), MFE (Micro-Frontend), SSI (Server Side Includes), ESI (Edge Side Includes), ESM (ECMAScript Modules), CJS (CommonJS), SEO (Search Engine Optimization).
+
 ## 60-second talk-track
 
 > "There are three ways to share code across apps: **build-time** via npm packages, **server-side composition** (SSI / fragments), and **runtime** via Module Federation or Web Components. NPM is the default – versioned, type-safe, tree-shakable, but every consumer must rebuild and redeploy when you ship. Module Federation lets the host load remote chunks over HTTP at runtime, so teams ship independently – at the cost of runtime risk, shared-dependency hell, and harder type-safety. I use npm for design systems and pure libs, MF only when the org genuinely needs independent deploys per team."
@@ -8,15 +10,15 @@
 
 ## Cheat-sheet table (MEMORIZE)
 
-| | NPM package | Module Federation | Web Components | iframe |
+| | NPM package | Module Federation (MF) | Web Components | iframe |
 |---|---|---|---|---|
 | Integration time | build | runtime | runtime | runtime |
 | Independent deploy | no | yes | yes | yes |
 | Shared dependencies | hoisted by pkg mgr | runtime `shared` config | duplicate runtimes | duplicate runtimes |
 | Type-safety | great | hard (need codegen) | weak | none |
 | Failure mode | build fails | runtime fetch fails (need fallback) | DOM error | iframe blank |
-| Best for | design system, utils, hooks | MFE shell with team-owned panels | embed in foreign tech | totally untrusted code, legacy |
-| SEO | inherits host | inherits host | inherits host | bad |
+| Best for | design system, utils, hooks | MFE (Micro-Frontend) shell with team-owned panels | embed in foreign tech | totally untrusted code, legacy |
+| SEO (Search Engine Optimization) | inherits host | inherits host | inherits host | bad |
 | Bundle dedup | yes | yes (if shared correctly) | no | no |
 
 ---

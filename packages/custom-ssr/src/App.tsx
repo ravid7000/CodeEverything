@@ -1,18 +1,31 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import { Island } from './Island';
+import { EventRoute } from './event/EventRoute';
+import type { EventPageProps } from './event/types';
 
-export function App({ initialData }: { initialData?: any }) {
+type InitialData = {
+  home?: { posts: string[] };
+  eventPage?: EventPageProps;
+};
+
+export function App({ initialData }: { initialData?: InitialData }) {
   return (
     <div style={{ fontFamily: 'system-ui', padding: 24 }}>
-      <nav style={{ display: 'flex', gap: 16, marginBottom: 24 }}>
+      <nav style={{ display: 'flex', gap: 16, marginBottom: 24, flexWrap: 'wrap' }}>
         <Link to="/">Home (SSR)</Link>
         <Link to="/about">About (SSG)</Link>
         <Link to="/dashboard">Dashboard (CSR)</Link>
+        <Link to="/event/evt-1">Event (SSR)</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home data={initialData?.home} />} />
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/event/:id"
+          element={<EventRoute serverData={initialData?.eventPage} />}
+        />
       </Routes>
     </div>
   );
@@ -27,6 +40,7 @@ function Home({ data }: { data?: { posts: string[] } }) {
       <React.Suspense fallback={<p>Loading slow widget...</p>}>
         <SlowWidget />
       </React.Suspense>
+      <Island name="Counter" props={{ start: 0 }} />
     </section>
   );
 }

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/12-handson-ssr.md",
+                "file": "interview/02-hydration-streaming-islands.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "12-handson-ssr"
+              "title": "02-hydration-streaming-islands"
             }
           }
         ]
@@ -94,8 +94,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/12-handson-ssr.md",
-                "collapseAll": false,
+                "file": "interview/02-hydration-streaming-islands.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 12-handson-ssr"
+              "title": "Backlinks for 02-hydration-streaming-islands"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/12-handson-ssr.md",
+                "file": "interview/06-mfe-vs-npm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 12-handson-ssr"
+              "title": "Outgoing links from 06-mfe-vs-npm"
             }
           },
           {
@@ -156,21 +156,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/12-handson-ssr.md",
+                "file": "interview/06-mfe-vs-npm.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 12-handson-ssr"
+              "title": "Outline of 06-mfe-vs-npm"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,33 +184,38 @@
   },
   "active": "6f59bcfe70172ead",
   "lastOpenFiles": [
-    "node_modules/react-router-dom/dist/umd/react-router-dom.production.min.js",
-    "node_modules/react-router-dom/dist/umd/react-router-dom.production.min.js.map",
-    "node_modules/react-router-dom/dist/umd/react-router-dom.development.js.map",
-    "node_modules/react-router-dom/dist/umd/react-router-dom.development.js",
-    "node_modules/react-router-dom/dist/server.mjs",
-    "node_modules/react-router-dom/dist/umd",
-    "node_modules/react-router-dom/dist/server.js",
-    "node_modules/react-router-dom/dist/server.d.ts",
-    "node_modules/react-router-dom/dist/react-router-dom.production.min.js.map",
-    "node_modules/react-router-dom/dist/react-router-dom.development.js.map",
-    "node_modules/react-router-dom/dist/react-router-dom.production.min.js",
+    "src/event/useLocalStorage.ts",
+    "src/event/EventRoute.tsx",
+    "src/event/EventPage.tsx",
+    "src/event/useCountdown.ts",
+    "src/event/fetchEvent.ts",
+    "src/event/dvrService.ts",
+    "src/event/format.ts",
+    "src/event/cookies.ts",
+    "src/event/types.ts",
+    "src/event",
+    "test.ts",
+    "interview/01-rendering-csr-ssr-ssg.md",
+    "interview/00-glossary.md",
+    "interview/08-performance.md",
+    "interview/09-observability.md",
+    "interview/02-hydration-streaming-islands.md",
+    "INTERVIEW_PLAN.md",
+    "interview/07-monorepo-architecture.md",
+    "interview/06-mfe-vs-npm.md",
+    "interview/05-api-caching.md",
+    "interview/04-state-management.md",
+    "interview/03-component-design.md",
+    "interview/14-full-deep-dive-playbook.md",
+    "interview/12-handson-ssr.md",
     "node_modules/react-router-dom/README.md",
     "node_modules/react-router-dom/LICENSE.md",
     "node_modules/react-router-dom/CHANGELOG.md",
     "node_modules/tsx/README.md",
     "node_modules/@types/express/README.md",
     "node_modules/express/Readme.md",
-    "interview/01-rendering-csr-ssr-ssg.md",
     "interview/13-handson-use-query.md",
-    "interview/12-handson-ssr.md",
-    "INTERVIEW_PLAN.md",
     "interview/11-mock-prompts.md",
-    "interview/10-cicd-deployment.md",
-    "interview/09-observability.md",
-    "interview/08-performance.md",
-    "interview/07-monorepo-architecture.md",
-    "interview/06-mfe-vs-npm.md",
-    "interview/05-api-caching.md"
+    "interview/10-cicd-deployment.md"
   ]
 }

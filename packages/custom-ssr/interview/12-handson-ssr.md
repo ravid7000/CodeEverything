@@ -1,5 +1,7 @@
 # 12 – Hands-on: Custom SSR with Streaming + SSG + CSR (in this package)
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — SSR (Server-Side Rendering), SSG (Static Site Generation), CSR (Client-Side Rendering), CDN (Content Delivery Network).
+
 This package (`packages/custom-ssr`) is currently a vanilla CSR Vite app. You'll turn it into a 3-route demo:
 - `/`         – **SSR** (streamed) with hydration
 - `/about`    – **SSG** (pre-rendered HTML at build, hydrated on load)

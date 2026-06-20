@@ -1,5 +1,7 @@
 # 09 – Observability & Monitoring
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — RUM (Real User Monitoring), FE (Frontend), OTel (OpenTelemetry), PII (Personally Identifiable Information), DSN (Data Source Name), StatsD (Statistics Daemon), LCP (Largest Contentful Paint), INP (Interaction to Next Paint), CLS (Cumulative Layout Shift), TTFB (Time to First Byte), FCP (First Contentful Paint), SHA (Secure Hash Algorithm), NEL (Network Error Logging).
+
 ## 60-second talk-track
 
 > "Frontend observability is the **three pillars** applied to the browser: logs (what happened), metrics (how often / how slow), traces (the causal chain across services). On the FE that means structured logs to a sink, RUM for Web Vitals, error tracking with source maps and release tagging, and distributed traces propagated via `traceparent` headers so a slow API call is one click away from the user session. The pitfalls are PII leakage, sampling correctly so you don't drown in data, and making sure your alerts page someone."
@@ -11,7 +13,7 @@
 | Category | What | Tool example |
 |---|---|---|
 | JS errors | `window.onerror`, `unhandledrejection`, React `ErrorBoundary` | Sentry, Datadog, Bugsnag |
-| Web Vitals | LCP/INP/CLS/TTFB/FCP | `web-vitals` lib + RUM |
+| Web Vitals | LCP (Largest Contentful Paint) / INP (Interaction to Next Paint) / CLS (Cumulative Layout Shift) / TTFB (Time to First Byte) / FCP (First Contentful Paint) | `web-vitals` lib + RUM (Real User Monitoring) |
 | Network | failures, latency, status codes | fetch wrapper, Sentry, OTel |
 | User actions | clicks, route changes, form submits | Segment, RudderStack, PostHog |
 | Custom metrics | feature usage, business events | StatsD, OTel, vendor |

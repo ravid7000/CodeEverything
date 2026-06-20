@@ -1,5 +1,7 @@
 # 01 – Rendering: CSR vs SSR vs SSG vs ISR
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — CSR (Client-Side Rendering), SSR (Server-Side Rendering), SSG (Static Site Generation), ISR (Incremental Static Regeneration), FCP (First Contentful Paint), TTFB (Time to First Byte), TTI (Time to Interactive), SEO (Search Engine Optimization), PDP (Product Detail Page).
+
 ## 60-second talk-track
 
 > "Rendering strategy is a per-route decision driven by **content freshness**, **SEO needs**, and **time-to-interactive budget**. CSR is cheapest to operate but worst for SEO and slow first paint. SSR gives fast FCP and SEO at the cost of TTFB and server load. SSG is the fastest possible but breaks when content is personalised. ISR/on-demand revalidation lets SSG handle slowly-changing content. In a real app I'd mix all four: SSG for marketing, ISR for catalog, SSR for PDP, CSR for authed dashboards."
@@ -7,6 +9,8 @@
 ---
 
 ## The Trade-off Table (MEMORIZE)
+
+Column/row keys: **CSR** (Client-Side Rendering), **SSR** (Server-Side Rendering), **SSG** (Static Site Generation), **ISR** (Incremental Static Regeneration). Metrics: **TTFB** (Time to First Byte), **FCP** (First Contentful Paint), **TTI** (Time to Interactive), **SEO** (Search Engine Optimization).
 
 |                 | CSR                        | SSR                  | SSG                | ISR              |
 | --------------- | -------------------------- | -------------------- | ------------------ | ---------------- |

@@ -1,5 +1,7 @@
 # 07 – Architecture: Monolith vs MFE, Monorepo vs Multi-repo
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — MFE (Micro-Frontend), SSR (Server-Side Rendering), SEO (Search Engine Optimization), E2E (End-to-End testing), OSS (Open Source Software).
+
 ## 60-second talk-track
 
 > "Architecture decisions are **org decisions wearing a tech hat**. A frontend monolith is the right default until team coordination becomes the bottleneck – usually around 4–5 teams. Micro-frontends solve independent deploys at the cost of runtime complexity and UX consistency. Orthogonally, monorepo vs multi-repo is about how you store code, not how you deploy it: monorepos give you atomic cross-cutting changes and a single source of truth, multi-repos give you isolation at the cost of coordination. The combinations that work in practice: monolith-in-monorepo (most companies), or MFEs-in-monorepo (Vercel, Shopify), or MFEs-in-multi-repo (only if teams are fully independent)."

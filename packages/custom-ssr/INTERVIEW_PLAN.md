@@ -24,6 +24,7 @@ You have ~12 productive hours. **Goal: confident talk-track on every topic + 2 t
 
 | # | File | What it gives you |
 |---|---|---|
+| 00 | [`00-glossary.md`](./interview/00-glossary.md) | **Abbreviation expansions** — FCP (First Contentful Paint), SSR (Server-Side Rendering), etc. |
 | 01 | [`01-rendering-csr-ssr-ssg.md`](./interview/01-rendering-csr-ssr-ssg.md) | CSR/SSR/SSG/ISR – when, why, trade-off table |
 | 02 | [`02-hydration-streaming-islands.md`](./interview/02-hydration-streaming-islands.md) | Hydration, streaming SSR, partial/selective, islands, RSC |
 | 03 | [`03-component-design.md`](./interview/03-component-design.md) | Compound components, headless UI, composability patterns |
@@ -37,6 +38,7 @@ You have ~12 productive hours. **Goal: confident talk-track on every topic + 2 t
 | 11 | [`11-mock-prompts.md`](./interview/11-mock-prompts.md) | End-to-end design prompts + scoring rubric |
 | 12 | [`12-handson-ssr.md`](./interview/12-handson-ssr.md) | **Build A**: finish this `custom-ssr` package (streaming + SSG + CSR routes) |
 | 13 | [`13-handson-use-query.md`](./interview/13-handson-use-query.md) | **Build B**: mini React Query in `packages/use-query` |
+| 14 | [`14-full-deep-dive-playbook.md`](./interview/14-full-deep-dive-playbook.md) | Deep decision framework: trade-offs, performance impact, failure modes for all topics |
 
 ---
 
@@ -90,3 +92,4 @@ Re-read in this order:
 2. `04` "server state vs client state" section
 3. `06` Module Federation cheat-sheet
 4. `11` one mock prompt
+5. `14` sections 0, 2, 8, 9 (decision frameworks + perf + architecture)

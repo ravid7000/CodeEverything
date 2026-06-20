@@ -1,5 +1,7 @@
 # 05 – API Integration & Caching
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — REST (Representational State Transfer), GraphQL (Graph Query Language), tRPC (TypeScript Remote Procedure Call), SW (Service Worker), TTL (Time To Live), ETag (Entity Tag), JWT (JSON Web Token), SDL (Schema Definition Language), BFF (Backend for Frontend), MSW (Mock Service Worker), OCC (Optimistic Concurrency Control), SWR (Stale-While-Revalidate).
+
 ## 60-second talk-track
 
 > "API integration has four layers of caching: browser HTTP cache, CDN, service worker, and app-level cache (React Query). Each has different invalidation primitives. For REST I default to React Query because it gives me dedupe, stale-while-revalidate, and optimistic updates for free. For GraphQL I'd reach for Apollo or urql – the cache normalizes by entity ID so updates propagate across queries. The hardest part isn't fetching, it's invalidation: TTL works for read-mostly, tag/entity invalidation works when mutations cross resources."
@@ -30,9 +32,9 @@ Each layer has different invalidation:
 
 ## REST vs GraphQL vs tRPC (the table)
 
-| | REST | GraphQL | tRPC |
+| | REST (Representational State Transfer) | GraphQL (Graph Query Language) | tRPC (TypeScript Remote Procedure Call) |
 |---|---|---|---|
-| Schema | OpenAPI (optional) | SDL (required) | TypeScript types |
+| Schema | OpenAPI (optional) | SDL (Schema Definition Language, required) | TypeScript types |
 | Over-fetching | yes | no (query what you need) | no |
 | Caching | HTTP cache works | client-side (normalized) | depends |
 | BE freedom | high | high | tied to TS server |

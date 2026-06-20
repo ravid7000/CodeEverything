@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { renderToString } from 'react-dom/server';
 import React from 'react';
-import { StaticRouter } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom/server';
 import { App } from '../src/App';
 
 const html = renderToString(

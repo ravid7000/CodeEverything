@@ -1,5 +1,7 @@
 # 04 – State Management
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — SWR (Stale-While-Revalidate), RTK (Redux Toolkit), GC (Garbage Collection).
+
 ## 60-second talk-track
 
 > "I separate state into four buckets: **server state** (data from API), **URL state** (filters, pagination), **client UI state** (modals, hover), and **client domain state** (cart, draft). Server state goes in React Query / SWR – never Redux. URL state goes in the router. UI state stays local (`useState`). Domain state goes in a global store – Zustand for new code, Redux Toolkit if the team already uses it. The #1 anti-pattern I see is one Redux store with server data – you reimplement caching, dedupe, and revalidation badly."

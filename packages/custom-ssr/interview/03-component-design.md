@@ -1,4 +1,6 @@
-# 03 – Component Design (Reusability, Composability, State)
+# 03 – Component Design
+
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — UI (User Interface), ARIA (Accessible Rich Internet Applications), WAI-ARIA (Web Accessibility Initiative – ARIA).
 
 ## 60-second talk-track
 

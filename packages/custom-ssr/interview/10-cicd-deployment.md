@@ -1,5 +1,7 @@
 # 10 – CI/CD & Deployment Strategies for Frontend
 
+> **Abbreviations:** [Glossary (00)](./00-glossary.md) — CI/CD (Continuous Integration/Deployment), CDN (Content Delivery Network), TTL (Time To Live), E2E (End-to-End testing), LHCI (Lighthouse CI), SBOM (Software Bill of Materials), CycloneDX (SBOM standard), SHA (Secure Hash Algorithm), KV (Key-Value store), S3 (Amazon Simple Storage Service).
+
 ## 60-second talk-track
 
 > "Frontend CI/CD has three goals: **fast feedback** on PRs, **safe rollouts** to prod, and **easy rollback** when things break. I separate the pipeline into fast-lane (lint, types, unit, build) and slow-lane (e2e, visual regression, Lighthouse), gate merges on fast-lane, and run slow-lane in parallel with a soft fail. Deploys are immutable hashed artifacts to a CDN with short-TTL HTML and long-TTL assets. Risky changes go behind feature flags so deploy and release are decoupled. Rollback is `git revert` + redeploy, or for static assets just point traffic at the previous build."
